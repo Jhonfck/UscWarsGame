@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>USC WARS</title>
+  		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>	
+		<script src="js/Box2dWeb-2.1.a.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8">
+	</head>
+	
+	<body>
+		<div id="gamecontainer">
+			<canvas id="gamecanvas" width="640" height="480" class="gamelayer">			
+			</canvas>
+			
+			<div id="scorescreen" class="gamelayer">
+				<img id="togglemusic" src="images/icons/sound.png" onclick="game.toggleBackgroundMusic();">
+				<img src="images/icons/prev.png" onclick="game.restartLevel();">
+				<span id="score">Score: 0</span>
+			</div>
+			
+			<div id="gamestartscreen" class="gamelayer">
+				<img src="images/icons/play.png" alt="Play Game" onclick = "game.showLevelScreen();"><br>
+				<img src="images/icons/settings.png" alt="Settings">
+			</div>
+			
+			<div id="levelselectscreen" class="gamelayer">
+			</div>
+			
+			<div id="loadingscreen" class="gamelayer">
+				<div id="loadingmessage"></div>
+			</div>
+			
+			<div id="endingscreen" class="gamelayer">
+				<div>
+					<p id="endingmessage">The Level Is Over Message</p>
+					<p id="playcurrentlevel" onclick="game.restartLevel();"><img src="images/icons/prev.png"> Repetir Nivel Actual</p>				
+					<p id="playnextlevel" onclick="game.startNextLevel();"><img src="images/icons/next.png"> Jugar Siguiente Nivel </p>				
+					<p id="returntolevelscreen"onclick="game.showLevelScreen();"><img src="images/icons/return.png"> Regresar a Elegir nivel</p>
+				</div>
+			</div>	
+			
+		</div>
+		<canvas id="debugcanvas" width="1000" height="480" style="border:1px solid black;"></canvas>
+	</body>
+</html>
